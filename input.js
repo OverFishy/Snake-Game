@@ -9,7 +9,7 @@ let endY;
 const board = document.getElementById('board-container')
 
 export function mobileMovment() {
-  board.addEventListener('touchstart', (e) => {
+  window.addEventListener('touchstart', (e) => {
     // Getting finger down details
     const touchList = e.changedTouches;
     const swipe = touchList.item(0)
@@ -18,7 +18,7 @@ export function mobileMovment() {
 
 
   })
-  board.addEventListener('touchend', (e) => {
+  window.addEventListener('touchend', (e) => {
     // Getting finger up location
     const touchList = e.changedTouches;
     const swipe = touchList.item(0)
