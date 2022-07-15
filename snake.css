@@ -1,5 +1,6 @@
 body {
   display: flex;
+  /* position: relative; */
   justify-content: space-between;;
   align-items: center;
   flex-direction: column;
@@ -36,10 +37,11 @@ body {
 
 #board-container {
   display: grid;
-  max-width: 600px;
-  max-height: 600px;
-  width: 90vw;
-  height: 90vw;
+  position: relative;
+  width: calc(90vw + 0px);
+  height: calc(90vw + 0px);
+  max-width: 550px;
+  max-height: 550px;
   border: 12px solid #99885c;
   border-radius: 12px;
 }
@@ -128,4 +130,59 @@ h1 {
 header h1 {
   color: rgb(94, 2, 2);
   animation: breath 1500ms infinite;
+}
+
+img {
+  display: none;
+  position: absolute;
+}
+
+#snake-left {
+  bottom: 0px;
+  left: 100px;
+}
+
+#snake-right {
+  transform: rotate(180deg);
+  top: 0px;
+  right: 100px;
+}
+
+@media only screen and (min-width: 600px) {
+  body {
+    background-color: rgb(189, 227, 189);
+  }
+
+  header {
+    margin-bottom: 30px;
+  }
+
+  header, footer {
+    background-image: unset;
+    border-bottom-left-radius: unset;
+    border-bottom-right-radius: unset;
+    height: 0px;
+  }
+
+  #board-container {
+    outline: 20px solid rgb(233, 237, 221);
+  }
+
+  header h1 {
+    margin-top: 120px;
+    padding: 0px;
+  }
+
+  footer span h4 {
+    margin-bottom: 110px;
+    padding: 0px;
+  }
+
+}
+
+@media only screen and (min-width: 1175px) {
+  img {
+    display: unset;
+    position: absolute;
+  }
 }
